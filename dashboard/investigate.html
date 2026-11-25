@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03 User/Event Investigation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="investigate">
+  <header>
+    <p class="eyebrow">Authentication risk analytics</p>
+    <h1>03 User/Event Investigation</h1>
+    <nav>
+      <a href="index.html">01 Security Overview</a>
+      <a href="high-risk.html">02 High-Risk Events</a>
+      <a href="investigate.html" aria-current="page">03 Investigation</a>
+    </nav>
+  </header>
+  <main>
+    <p class="note">Choose a user, event, time range, IP, device, and risk level. The note below uses only the facts on the selected row and the signal sentences from the scorer.</p>
+    <form class="filters" id="filters">
+      <label>User
+        <select id="filter-user"><option value="">All users</option></select>
+      </label>
+      <label>Event
+        <select id="filter-event"><option value="">Select an event</option></select>
+      </label>
+      <label>Risk
+        <select id="filter-risk"><option value="">All levels</option></select>
+      </label>
+      <label>From (UTC date)
+        <input id="filter-from" type="date">
+      </label>
+      <label>To (UTC date)
+        <input id="filter-to" type="date">
+      </label>
+      <label>IP
+        <select id="filter-ip"><option value="">All addresses</option></select>
+      </label>
+      <label>Device
+        <select id="filter-device"><option value="">All devices</option></select>
+      </label>
+    </form>
+    <p class="note" id="match-count"></p>
+    <section class="detail" id="detail"></section>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

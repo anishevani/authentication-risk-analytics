@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 Security Overview</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="overview">
+  <header>
+    <p class="eyebrow">Authentication risk analytics</p>
+    <h1>01 Security Overview</h1>
+    <nav>
+      <a href="index.html" aria-current="page">01 Security Overview</a>
+      <a href="high-risk.html">02 High-Risk Events</a>
+      <a href="investigate.html">03 Investigation</a>
+    </nav>
+  </header>
+  <main>
+    <p class="note">Teaching extract, 2–13 November 2026. A score is a place in the queue. It is not a finding that an account was taken over. High-risk on this page means score 60 or above (high or critical). The investigation queue starts at 30.</p>
+    <section class="kpis">
+      <article class="card"><div class="label">Authentication attempts</div><div class="value" id="kpi-attempts">—</div></article>
+      <article class="card"><div class="label">Failed logins</div><div class="value" id="kpi-failed">—</div></article>
+      <article class="card"><div class="label">High-risk events</div><div class="value" id="kpi-high">—</div><div class="hint">Score 60 or above</div></article>
+      <article class="card"><div class="label">Affected users</div><div class="value" id="kpi-users">—</div><div class="hint">Users with a high-risk event</div></article>
+    </section>
+    <section class="card">
+      <div class="label">Risk distribution</div>
+      <div id="distribution"></div>
+    </section>
+    <h2 class="section">Queue, score 30 and above (<span id="queue-count">0</span>)</h2>
+    <table id="queue-table">
+      <thead>
+        <tr>
+          <th>Chicago time</th><th>Event</th><th>User</th><th>Result</th><th>IP</th><th>Country</th><th>Device</th><th>Score</th><th>Signals</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

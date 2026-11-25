@@ -1,0 +1,261 @@
+{
+  "normal_u001": {
+    "event_id": "E000014",
+    "event_time": "2026-11-02T14:26:44Z",
+    "user_id": "U001",
+    "username": "avery.chen@northwind.example",
+    "auth_result": "success"
+  },
+  "typo_u002": {
+    "event_id": "E000120",
+    "event_time": "2026-11-03T14:12:00Z",
+    "user_id": "U002",
+    "username": "blake.ortiz@northwind.example",
+    "auth_result": "failure"
+  },
+  "typo_u002_success": {
+    "event_id": "E000121",
+    "event_time": "2026-11-03T14:14:00Z",
+    "user_id": "U002",
+    "username": "blake.ortiz@northwind.example",
+    "auth_result": "success"
+  },
+  "new_device_u006": {
+    "event_id": "E000410",
+    "event_time": "2026-11-05T18:10:00Z",
+    "user_id": "U006",
+    "username": "finley.garcia@northwind.example",
+    "auth_result": "success"
+  },
+  "mfa_u019": {
+    "event_id": "E000510",
+    "event_time": "2026-11-06T16:40:00Z",
+    "user_id": "U019",
+    "username": "sam.nowak@northwind.example",
+    "auth_result": "failure"
+  },
+  "traveler_u008_day1": {
+    "event_id": "E000607",
+    "event_time": "2026-11-09T15:30:00Z",
+    "user_id": "U008",
+    "username": "harper.singh@northwind.example",
+    "auth_result": "success"
+  },
+  "burst_u014_morning": {
+    "event_id": "E000687",
+    "event_time": "2026-11-10T14:00:00Z",
+    "user_id": "U014",
+    "username": "noah.hassan@northwind.example",
+    "auth_result": "success"
+  },
+  "travel_u012_home": {
+    "event_id": "E000712",
+    "event_time": "2026-11-10T15:00:00Z",
+    "user_id": "U012",
+    "username": "logan.okonkwo@northwind.example",
+    "auth_result": "success"
+  },
+  "burst_u014_fail1": {
+    "event_id": "E000716",
+    "event_time": "2026-11-10T15:10:00Z",
+    "user_id": "U014",
+    "username": "noah.hassan@northwind.example",
+    "auth_result": "failure"
+  },
+  "burst_u014_fail5": {
+    "event_id": "E000720",
+    "event_time": "2026-11-10T15:14:00Z",
+    "user_id": "U014",
+    "username": "noah.hassan@northwind.example",
+    "auth_result": "failure"
+  },
+  "burst_u014_fail6": {
+    "event_id": "E000721",
+    "event_time": "2026-11-10T15:15:00Z",
+    "user_id": "U014",
+    "username": "noah.hassan@northwind.example",
+    "auth_result": "failure"
+  },
+  "traveler_u008_day2": {
+    "event_id": "E000724",
+    "event_time": "2026-11-10T15:30:00Z",
+    "user_id": "U008",
+    "username": "harper.singh@northwind.example",
+    "auth_result": "success"
+  },
+  "travel_u012_lagos": {
+    "event_id": "E000732",
+    "event_time": "2026-11-10T15:40:00Z",
+    "user_id": "U012",
+    "username": "logan.okonkwo@northwind.example",
+    "auth_result": "success"
+  },
+  "travel_u012_return": {
+    "event_id": "E000793",
+    "event_time": "2026-11-10T22:00:00Z",
+    "user_id": "U012",
+    "username": "logan.okonkwo@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U001": {
+    "event_id": "E000799",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U001",
+    "username": "avery.chen@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U003": {
+    "event_id": "E000800",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U003",
+    "username": "casey.nguyen@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U005": {
+    "event_id": "E000801",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U005",
+    "username": "ellis.brooks@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U007": {
+    "event_id": "E000802",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U007",
+    "username": "gray.kim@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U010": {
+    "event_id": "E000803",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U010",
+    "username": "jordan.reyes@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U011": {
+    "event_id": "E000804",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U011",
+    "username": "kai.berg@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U013": {
+    "event_id": "E000805",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U013",
+    "username": "morgan.silva@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U015": {
+    "event_id": "E000806",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U015",
+    "username": "oakley.bergstrom@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U016": {
+    "event_id": "E000807",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U016",
+    "username": "parker.diaz@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U018": {
+    "event_id": "E000808",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U018",
+    "username": "riley.cohen@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U020": {
+    "event_id": "E000809",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U020",
+    "username": "taylor.ibrahim@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_context_U022": {
+    "event_id": "E000810",
+    "event_time": "2026-11-11T14:00:00Z",
+    "user_id": "U022",
+    "username": "val.rossi@northwind.example",
+    "auth_result": "success"
+  },
+  "traveler_u008_day3": {
+    "event_id": "E000834",
+    "event_time": "2026-11-11T15:30:00Z",
+    "user_id": "U008",
+    "username": "harper.singh@northwind.example",
+    "auth_result": "success"
+  },
+  "spray_u001_fail": {
+    "event_id": "E000867",
+    "event_time": "2026-11-11T19:40:00Z",
+    "user_id": "U001",
+    "username": "avery.chen@northwind.example",
+    "auth_result": "failure"
+  },
+  "spray_u010_fail": {
+    "event_id": "E000871",
+    "event_time": "2026-11-11T19:44:00Z",
+    "user_id": "U010",
+    "username": "jordan.reyes@northwind.example",
+    "auth_result": "failure"
+  },
+  "spray_u022_fail": {
+    "event_id": "E000879",
+    "event_time": "2026-11-11T19:51:00Z",
+    "user_id": "U022",
+    "username": "val.rossi@northwind.example",
+    "auth_result": "failure"
+  },
+  "spray_u022_success": {
+    "event_id": "E000880",
+    "event_time": "2026-11-11T20:00:00Z",
+    "user_id": "U022",
+    "username": "val.rossi@northwind.example",
+    "auth_result": "success"
+  },
+  "brute_u009_fail1": {
+    "event_id": "E000899",
+    "event_time": "2026-11-12T07:10:00Z",
+    "user_id": "U009",
+    "username": "indigo.walsh@northwind.example",
+    "auth_result": "failure"
+  },
+  "brute_u009_fail5": {
+    "event_id": "E000903",
+    "event_time": "2026-11-12T07:14:00Z",
+    "user_id": "U009",
+    "username": "indigo.walsh@northwind.example",
+    "auth_result": "failure"
+  },
+  "brute_u009_fail6": {
+    "event_id": "E000904",
+    "event_time": "2026-11-12T07:15:00Z",
+    "user_id": "U009",
+    "username": "indigo.walsh@northwind.example",
+    "auth_result": "failure"
+  },
+  "brute_u009_success": {
+    "event_id": "E000905",
+    "event_time": "2026-11-12T07:20:00Z",
+    "user_id": "U009",
+    "username": "indigo.walsh@northwind.example",
+    "auth_result": "success"
+  },
+  "latenight_u031": {
+    "event_id": "E000906",
+    "event_time": "2026-11-12T07:40:00Z",
+    "user_id": "U031",
+    "username": "zen.hoff@northwind.example",
+    "auth_result": "success"
+  },
+  "brute_u009_recovery": {
+    "event_id": "E000915",
+    "event_time": "2026-11-12T14:30:00Z",
+    "user_id": "U009",
+    "username": "indigo.walsh@northwind.example",
+    "auth_result": "success"
+  }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 High-Risk Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="high-risk">
+  <header>
+    <p class="eyebrow">Authentication risk analytics</p>
+    <h1>02 High-Risk Events</h1>
+    <nav>
+      <a href="index.html">01 Security Overview</a>
+      <a href="high-risk.html" aria-current="page">02 High-Risk Events</a>
+      <a href="investigate.html">03 Investigation</a>
+    </nav>
+  </header>
+  <main>
+    <p class="note">Score 60 or above. <span id="high-count">0</span> events. Open an event id to see the signals on the investigation page. Medium scores stay on the overview queue and are not repeated here.</p>
+    <table id="high-table">
+      <thead>
+        <tr>
+          <th>Chicago time</th><th>Event</th><th>User</th><th>Result</th><th>IP</th><th>Country</th><th>Device</th><th>Score</th><th>Signals</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

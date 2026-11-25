@@ -1,0 +1,450 @@
+{
+  "scenarios": [
+    {
+      "id": "normal_login",
+      "kind": "summarizer",
+      "event_id": "E000014",
+      "facts": {
+        "event_id": "E000014",
+        "event_time": "2026-11-02T14:26:44Z",
+        "user_id": "U001",
+        "username": "avery.chen@northwind.example",
+        "auth_result": "success",
+        "failure_reason": "",
+        "ip_address": "198.51.100.10",
+        "country_code": "US",
+        "city": "Chicago",
+        "device": "macos | safari | desktop",
+        "client_app": "browser",
+        "mfa_result": "satisfied",
+        "risk_score": 0,
+        "risk_level": "low",
+        "signals": [],
+        "contributions": []
+      },
+      "explanation": {
+        "summary": "Attempt E000014 for avery.chen@northwind.example at 2026-11-02T14:26:44Z from 198.51.100.10 in US (Chicago). Result: success. Client: browser. Score: 0 (low).",
+        "why_flagged": "No risk signal fired. The attempt stays in the log.",
+        "relevant_indicators": [
+          "No signal fired."
+        ],
+        "recommended_steps": [
+          "No containment. Leave the attempt in the log."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "wrong_password_once",
+      "kind": "summarizer",
+      "event_id": "E000120",
+      "facts": {
+        "event_id": "E000120",
+        "event_time": "2026-11-03T14:12:00Z",
+        "user_id": "U002",
+        "username": "blake.ortiz@northwind.example",
+        "auth_result": "failure",
+        "failure_reason": "invalid_password",
+        "ip_address": "198.51.100.10",
+        "country_code": "US",
+        "city": "Chicago",
+        "device": "windows 10 | edge | desktop",
+        "client_app": "browser",
+        "mfa_result": "",
+        "risk_score": 5,
+        "risk_level": "low",
+        "signals": [
+          "failed_login"
+        ],
+        "contributions": [
+          {
+            "signal": "failed_login",
+            "points": 5,
+            "reason": "This attempt is a password failure (invalid_password), and fewer than 5 password failures fell in the prior 60 minutes."
+          }
+        ]
+      },
+      "explanation": {
+        "summary": "Attempt E000120 for blake.ortiz@northwind.example at 2026-11-03T14:12:00Z from 198.51.100.10 in US (Chicago). Result: failure. Client: browser. Score: 5 (low).",
+        "why_flagged": "The score stays in the low band. Signals that fired: This attempt is a password failure (invalid_password), and fewer than 5 password failures fell in the prior 60 minutes.",
+        "relevant_indicators": [
+          "failed_login (+5): This attempt is a password failure (invalid_password), and fewer than 5 password failures fell in the prior 60 minutes."
+        ],
+        "recommended_steps": [
+          "One password failure is below the queue. Check that it did not continue into a burst.",
+          "No containment. Leave the attempt in the log."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "mfa_denied",
+      "kind": "summarizer",
+      "event_id": "E000510",
+      "facts": {
+        "event_id": "E000510",
+        "event_time": "2026-11-06T16:40:00Z",
+        "user_id": "U019",
+        "username": "sam.nowak@northwind.example",
+        "auth_result": "failure",
+        "failure_reason": "mfa_denied",
+        "ip_address": "198.51.100.20",
+        "country_code": "US",
+        "city": "New York",
+        "device": "windows 10 | chrome | desktop",
+        "client_app": "browser",
+        "mfa_result": "denied",
+        "risk_score": 30,
+        "risk_level": "medium",
+        "signals": [
+          "mfa_denied"
+        ],
+        "contributions": [
+          {
+            "signal": "mfa_denied",
+            "points": 30,
+            "reason": "MFA result is denied."
+          }
+        ]
+      },
+      "explanation": {
+        "summary": "Attempt E000510 for sam.nowak@northwind.example at 2026-11-06T16:40:00Z from 198.51.100.20 in US (New York). Result: failure. Client: browser. Score: 30 (medium). This activity warrants investigation because the fired signals are listed below.",
+        "why_flagged": "This activity warrants investigation because MFA result is denied.",
+        "relevant_indicators": [
+          "mfa_denied (+30): MFA result is denied."
+        ],
+        "recommended_steps": [
+          "Ask whether the person saw the MFA prompt and rejected it.",
+          "Write down which sentence was checked against the log before any account change."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "impossible_travel",
+      "kind": "summarizer",
+      "event_id": "E000732",
+      "facts": {
+        "event_id": "E000732",
+        "event_time": "2026-11-10T15:40:00Z",
+        "user_id": "U012",
+        "username": "logan.okonkwo@northwind.example",
+        "auth_result": "success",
+        "failure_reason": "",
+        "ip_address": "192.0.2.40",
+        "country_code": "NG",
+        "city": "Lagos",
+        "device": "windows 10 | chrome | desktop",
+        "client_app": "browser",
+        "mfa_result": "satisfied",
+        "risk_score": 45,
+        "risk_level": "medium",
+        "signals": [
+          "unusual_location",
+          "impossible_travel"
+        ],
+        "contributions": [
+          {
+            "signal": "unusual_location",
+            "points": 20,
+            "reason": "Country NG has no prior successful login for this user. Prior successful countries: US."
+          },
+          {
+            "signal": "impossible_travel",
+            "points": 25,
+            "reason": "Previous successful login was in US at 2026-11-10T15:00:00Z, 40 minutes before this event in NG. The window is 2 hours."
+          }
+        ]
+      },
+      "explanation": {
+        "summary": "Attempt E000732 for logan.okonkwo@northwind.example at 2026-11-10T15:40:00Z from 192.0.2.40 in NG (Lagos). Result: success. Client: browser. Score: 45 (medium). This activity warrants investigation because the fired signals are listed below.",
+        "why_flagged": "This activity warrants investigation because Country NG has no prior successful login for this user. Prior successful countries: US. Previous successful login was in US at 2026-11-10T15:00:00Z, 40 minutes before this event in NG. The window is 2 hours.",
+        "relevant_indicators": [
+          "unusual_location (+20): Country NG has no prior successful login for this user. Prior successful countries: US.",
+          "impossible_travel (+25): Previous successful login was in US at 2026-11-10T15:00:00Z, 40 minutes before this event in NG. The window is 2 hours."
+        ],
+        "recommended_steps": [
+          "Ask whether travel or a VPN explains the country named in the signal.",
+          "Put the two timestamps in the signal side by side. A VPN can produce this gap.",
+          "Write down which sentence was checked against the log before any account change."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "spray_success",
+      "kind": "summarizer",
+      "event_id": "E000880",
+      "facts": {
+        "event_id": "E000880",
+        "event_time": "2026-11-11T20:00:00Z",
+        "user_id": "U022",
+        "username": "val.rossi@northwind.example",
+        "auth_result": "success",
+        "failure_reason": "",
+        "ip_address": "192.0.2.50",
+        "country_code": "NG",
+        "city": "Lagos",
+        "device": "linux | firefox | desktop",
+        "client_app": "legacy_protocol",
+        "mfa_result": "not_required",
+        "risk_score": 80,
+        "risk_level": "critical",
+        "signals": [
+          "new_device",
+          "unusual_location",
+          "legacy_protocol",
+          "password_spray_source"
+        ],
+        "contributions": [
+          {
+            "signal": "new_device",
+            "points": 15,
+            "reason": "Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: macos | safari | desktop."
+          },
+          {
+            "signal": "unusual_location",
+            "points": 20,
+            "reason": "Country NG has no prior successful login for this user. Prior successful countries: US."
+          },
+          {
+            "signal": "legacy_protocol",
+            "points": 15,
+            "reason": "Client app is legacy_protocol."
+          },
+          {
+            "signal": "password_spray_source",
+            "points": 30,
+            "reason": "IP 192.0.2.50 has password failures for 12 distinct users in the 60 minutes ending at this event. The threshold is 5."
+          }
+        ]
+      },
+      "explanation": {
+        "summary": "Attempt E000880 for val.rossi@northwind.example at 2026-11-11T20:00:00Z from 192.0.2.50 in NG (Lagos). Result: success. Client: legacy_protocol. Score: 80 (critical). This activity warrants investigation because the fired signals are listed below.",
+        "why_flagged": "This activity warrants investigation because Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: macos | safari | desktop. Country NG has no prior successful login for this user. Prior successful countries: US. Client app is legacy_protocol. IP 192.0.2.50 has password failures for 12 distinct users in the 60 minutes ending at this event. The threshold is 5.",
+        "relevant_indicators": [
+          "new_device (+15): Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: macos | safari | desktop.",
+          "unusual_location (+20): Country NG has no prior successful login for this user. Prior successful countries: US.",
+          "legacy_protocol (+15): Client app is legacy_protocol.",
+          "password_spray_source (+30): IP 192.0.2.50 has password failures for 12 distinct users in the 60 minutes ending at this event. The threshold is 5."
+        ],
+        "recommended_steps": [
+          "Ask whether the person enrolled a new phone or browser. The device value is the operating system, browser, and device type, not a hardware id.",
+          "Ask whether travel or a VPN explains the country named in the signal.",
+          "Check whether this account is allowed to sign in with a legacy client. In this extract those clients do not require MFA.",
+          "List the other accounts that failed from this IP in the same hour before changing any password.",
+          "Write down which sentence was checked against the log before any account change."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "critical_sao_paulo_success",
+      "kind": "summarizer",
+      "event_id": "E000905",
+      "facts": {
+        "event_id": "E000905",
+        "event_time": "2026-11-12T07:20:00Z",
+        "user_id": "U009",
+        "username": "indigo.walsh@northwind.example",
+        "auth_result": "success",
+        "failure_reason": "",
+        "ip_address": "192.0.2.77",
+        "country_code": "BR",
+        "city": "Sao Paulo",
+        "device": "linux | firefox | desktop",
+        "client_app": "legacy_protocol",
+        "mfa_result": "not_required",
+        "risk_score": 100,
+        "risk_level": "critical",
+        "signals": [
+          "repeated_failed_logins",
+          "failures_followed_by_success",
+          "new_device",
+          "unusual_location",
+          "unusual_time",
+          "legacy_protocol"
+        ],
+        "contributions": [
+          {
+            "signal": "repeated_failed_logins",
+            "points": 30,
+            "reason": "6 password failures for this user in the 60 minutes ending at this event. The threshold is 5."
+          },
+          {
+            "signal": "failures_followed_by_success",
+            "points": 35,
+            "reason": "This success follows 6 password failures in the prior 30 minutes. The threshold is 3."
+          },
+          {
+            "signal": "new_device",
+            "points": 15,
+            "reason": "Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: windows 10 | edge | desktop."
+          },
+          {
+            "signal": "unusual_location",
+            "points": 20,
+            "reason": "Country BR has no prior successful login for this user. Prior successful countries: US."
+          },
+          {
+            "signal": "unusual_time",
+            "points": 10,
+            "reason": "Local hour is 1 in America/Chicago, inside 00:00-05:59. 0 of 25 prior successful logins for this user were in that band (share 0.00, threshold 0.10)."
+          },
+          {
+            "signal": "legacy_protocol",
+            "points": 15,
+            "reason": "Client app is legacy_protocol."
+          }
+        ]
+      },
+      "explanation": {
+        "summary": "Attempt E000905 for indigo.walsh@northwind.example at 2026-11-12T07:20:00Z from 192.0.2.77 in BR (Sao Paulo). Result: success. Client: legacy_protocol. Score: 100 (critical). This activity warrants investigation because the fired signals are listed below.",
+        "why_flagged": "This activity warrants investigation because 6 password failures for this user in the 60 minutes ending at this event. The threshold is 5. This success follows 6 password failures in the prior 30 minutes. The threshold is 3. Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: windows 10 | edge | desktop. Country BR has no prior successful login for this user. Prior successful countries: US. Local hour is 1 in America/Chicago, inside 00:00-05:59. 0 of 25 prior successful logins for this user were in that band (share 0.00, threshold 0.10). Client app is legacy_protocol.",
+        "relevant_indicators": [
+          "repeated_failed_logins (+30): 6 password failures for this user in the 60 minutes ending at this event. The threshold is 5.",
+          "failures_followed_by_success (+35): This success follows 6 password failures in the prior 30 minutes. The threshold is 3.",
+          "new_device (+15): Device 'linux | firefox | desktop' has no prior successful login for this user. Prior successful devices: windows 10 | edge | desktop.",
+          "unusual_location (+20): Country BR has no prior successful login for this user. Prior successful countries: US.",
+          "unusual_time (+10): Local hour is 1 in America/Chicago, inside 00:00-05:59. 0 of 25 prior successful logins for this user were in that band (share 0.00, threshold 0.10).",
+          "legacy_protocol (+15): Client app is legacy_protocol."
+        ],
+        "recommended_steps": [
+          "Line the failure timestamps up against this user's other attempts the same day, and ask whether they were retrying a password.",
+          "Use the session id as the pointer into access logs. This extract has no authorization events, so that read is outside this file.",
+          "Ask whether the person enrolled a new phone or browser. The device value is the operating system, browser, and device type, not a hardware id.",
+          "Ask whether travel or a VPN explains the country named in the signal.",
+          "Compare the local hour in the signal with this user's earlier successful hours before treating the clock as suspicious.",
+          "Check whether this account is allowed to sign in with a legacy client. In this extract those clients do not require MFA.",
+          "Write down which sentence was checked against the log before any account change."
+        ]
+      },
+      "review": {
+        "invented_facts": false,
+        "exaggerated_certainty": false,
+        "bad_recommendation": false,
+        "missing_evidence": false,
+        "invented_details": [],
+        "certainty_details": [],
+        "recommendation_details": [],
+        "missing_details": []
+      }
+    },
+    {
+      "id": "rejected_loose_wording",
+      "kind": "rejected_example",
+      "event_id": "E000014",
+      "facts": {
+        "event_id": "E000014",
+        "event_time": "2026-11-02T14:26:44Z",
+        "user_id": "U001",
+        "username": "avery.chen@northwind.example",
+        "auth_result": "success",
+        "failure_reason": "",
+        "ip_address": "198.51.100.10",
+        "country_code": "US",
+        "city": "Chicago",
+        "device": "macos | safari | desktop",
+        "client_app": "browser",
+        "mfa_result": "satisfied",
+        "risk_score": 0,
+        "risk_level": "low",
+        "signals": [],
+        "contributions": []
+      },
+      "explanation": {
+        "summary": "This user was hacked from a Russian IP 203.0.113.99. The account takeover is confirmed.",
+        "why_flagged": "The model is certain this is definitely a breach.",
+        "relevant_indicators": [
+          "Threat intel matched the address."
+        ],
+        "recommended_steps": [
+          "Disable every employee account and reset all passwords immediately."
+        ]
+      },
+      "review": {
+        "invented_facts": true,
+        "exaggerated_certainty": true,
+        "bad_recommendation": true,
+        "missing_evidence": true,
+        "invented_details": [
+          "203",
+          "113",
+          "99",
+          "203.0.113.99",
+          "threat intel",
+          "russia",
+          "russian"
+        ],
+        "certainty_details": [
+          "hacked",
+          "account takeover",
+          "this user was",
+          "definitely",
+          "is confirmed"
+        ],
+        "recommendation_details": [
+          "disable every",
+          "reset all",
+          "every employee",
+          "all passwords"
+        ],
+        "missing_details": [
+          "no_signal"
+        ]
+      },
+      "what_is_wrong": [
+        "Says the user was hacked and that account takeover is confirmed.",
+        "Names a Russian address that is not on the row.",
+        "Cites a threat-intel match the extract does not have.",
+        "Tells the analyst to disable every employee and reset all passwords.",
+        "Does not quote the signal sentence, because no signal fired."
+      ]
+    }
+  ]
+}
